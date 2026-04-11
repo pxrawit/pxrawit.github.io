@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #020617;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+header h1 {
+  font-size: 42px;
+  color: #38bdf8;
+}
+
+header p {
+  opacity: 0.8;
+}
+
+/* SECTION */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.8s;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  color: #38bdf8;
+}
+
+/* SKILLS */
+.skills span {
+  background: #1e293b;
+  padding: 10px 15px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.skills span:hover {
+  background: #38bdf8;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* PROJECT */
+.project {
+  background: #0f172a;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0;
+  transition: 0.4s;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.3);
+}
+
+.project img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.project:hover img {
+  transform: scale(1.1);
+}
+
+.project-content {
+  padding: 20px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #38bdf8;
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0ea5e9;
+}
+
+/* CONTACT */
+a {
+  color: #38bdf8;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Pee Purawit</h1>
+  <p>Computer Science Student | Developer | IoT</p>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    สนใจ Web Development และ IoT พัฒนาโปรเจค ESP32 และระบบฐานข้อมูล
+  </p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>C</span>
+    <span>Java</span>
+    <span>Python</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>PHP</span>
+    <span>MySQL</span>
+    <span>Arduino</span>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <!-- PROJECT 1 -->
+  <div class="project">
+    <img src="https://picsum.photos/800/400?1">
+    <div class="project-content">
+      <h3>Smart Mini Security Box</h3>
+      <p>ESP32 + Sensor ตรวจจับแก๊สและอุณหภูมิ</p>
+      <a href="https://github.com/yourname/project1" class="btn">View GitHub</a>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="project">
+    <img src="https://picsum.photos/800/400?2">
+    <div class="project-content">
+      <h3>Web Sensor Dashboard</h3>
+      <p>PHP + MySQL แสดงข้อมูลแบบ Real-time</p>
+      <a href="https://github.com/yourname/project2" class="btn">View GitHub</a>
+    </div>
+  </div>
+
+  <!-- PROJECT 3 -->
+  <div class="project">
+    <img src="https://picsum.photos/800/400?3">
+    <div class="project-content">
+      <h3>Cake Shop App</h3>
+      <p>แอปขายเค้ก พร้อมระบบสั่งซื้อ</p>
+      <a href="https://github.com/yourname/project3" class="btn">View GitHub</a>
+    </div>
+  </div>
+
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <p>GitHub: <a href="https://github.com/yourname">github.com/yourname</a></p>
+</section>
+
+<script>
+/* SCROLL ANIMATION */
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
