@@ -1,10 +1,16 @@
-const sections = document.querySelectorAll("section");
+const faders = document.querySelectorAll(".fade");
 
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      sec.classList.add("show");
+function showOnScroll() {
+  const trigger = window.innerHeight - 100;
+
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+
+    if (top < trigger) {
+      el.classList.add("show");
     }
   });
-});
+}
+
+window.addEventListener("scroll", showOnScroll);
+window.addEventListener("load", showOnScroll);
